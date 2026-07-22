@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shine Super Speciality Dental Clinic | Best Dental Clinic in Hyderabad</title>
-<meta name="description" content="Shine Super Speciality Dental Clinic is a leading multi-speciality dental clinic in Hyderabad offering dental implants, root canal treatment, cosmetic dentistry, orthodontics, pediatric dentistry and smile makeovers across Alkapuri and Ibrahimpatnam.">
+<title>Shine Superspeciality Dental Clinic | Best Dental Clinic in Hyderabad</title>
+<meta name="description" content="Shine Superspeciality Dental Clinic is a leading multi-speciality dental clinic in Hyderabad offering dental implants, root canal treatment, cosmetic dentistry, orthodontics, pediatric dentistry and smile makeovers across Alkapuri and Ibrahimpatnam.">
 <link rel="canonical" href="https://shinedental-clinics.com/" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -92,6 +92,7 @@ header .navbar{
 }
 .logo-mark{display:flex; align-items:center; gap:12px; color:#fff;}
 .logo-mark svg{width:38px; height:38px; flex-shrink:0;}
+.logo-mark img.logo-img{width:40px; height:40px; object-fit:contain; flex-shrink:0;}
 .logo-text{font-family:'Fraunces', serif; font-size:21px; font-weight:600; letter-spacing:.2px; color:#fff; line-height:1.15;}
 .logo-text span{display:block; font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:rgba(255,255,255,.68); font-weight:500; margin-top:2px;}
 .nav-links{list-style:none; display:flex; gap:6px; align-items:center;}
@@ -143,6 +144,12 @@ header.scrolled{
 }
 .hero-content .eyebrow{color:#FFB8A3;}
 .hero-content .eyebrow::before{background:#FFB8A3;}
+.est-badge{
+  display:inline-flex; align-items:center; gap:8px; font-family:'IBM Plex Mono',monospace; font-size:12px;
+  letter-spacing:.08em; color:rgba(255,255,255,.75); background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.18);
+  padding:7px 14px; border-radius:100px; margin-bottom:16px;
+}
+.est-badge i{color:var(--coral);}
 #home h1{
   font-size:clamp(38px,5.1vw,64px); color:#fff; max-width:720px; margin-bottom:26px; letter-spacing:-.5px;
 }
@@ -312,17 +319,28 @@ section{padding:120px 0;}
 }
 .doc-card:hover{transform:translateY(-10px); box-shadow:var(--shadow-lg);}
 .doc-photo{
-  height:180px; background:linear-gradient(135deg,var(--teal),var(--teal-2)); display:flex; align-items:center; justify-content:center;
+  height:220px; background:linear-gradient(135deg,var(--teal),var(--teal-2)); display:flex; align-items:center; justify-content:center;
   position:relative; overflow:hidden;
 }
-.doc-photo .initials{font-family:'Fraunces',serif; font-size:52px; color:rgba(255,255,255,.92); font-weight:600;}
-.doc-photo::after{content:''; position:absolute; inset:0; background:radial-gradient(circle at 80% 0%, rgba(255,107,74,.35), transparent 60%);}
+.doc-photo img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:top center; z-index:1;}
+.doc-photo .initials{font-family:'Fraunces',serif; font-size:52px; color:rgba(255,255,255,.92); font-weight:600; position:relative; z-index:0;}
+.doc-photo::after{content:''; position:absolute; inset:0; background:radial-gradient(circle at 80% 0%, rgba(255,107,74,.35), transparent 60%); z-index:0;}
 .doc-info{padding:26px 26px 28px;}
 .doc-info h3{font-size:19px; margin-bottom:4px;}
 .doc-info .role{color:var(--coral-deep); font-weight:700; font-size:13.5px; margin-bottom:14px; text-transform:uppercase; letter-spacing:.03em;}
 .doc-meta{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:14px;}
 .doc-meta span{font-family:'IBM Plex Mono',monospace; font-size:11.5px; background:var(--mint); color:var(--teal-2); padding:6px 11px; border-radius:8px; font-weight:600;}
 .doc-info p{font-size:13.5px; color:var(--ink-soft);}
+.doc-bio-full{display:none; font-size:13.5px; color:var(--ink-soft); margin-top:10px; line-height:1.7;}
+.doc-bio-full.open{display:block;}
+.doc-bio-full strong{color:var(--ink);}
+.bio-toggle{
+  margin-top:12px; display:inline-flex; align-items:center; gap:6px; background:none; border:none; cursor:pointer;
+  font-family:'IBM Plex Mono',monospace; font-size:11.5px; font-weight:700; color:var(--coral-deep); letter-spacing:.04em;
+  text-transform:uppercase; padding:0;
+}
+.bio-toggle i{transition:transform .3s var(--ease); font-size:10px;}
+.bio-toggle.open i{transform:rotate(180deg);}
 @media(max-width:1080px){.team-grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:620px){.team-grid{grid-template-columns:1fr;}}
 
@@ -350,6 +368,17 @@ section{padding:120px 0;}
 @media(max-width:980px){.ba-grid{grid-template-columns:1fr;}}
 
 /* ================= TESTIMONIALS ================= */
+.google-badge{
+  display:inline-flex; align-items:center; gap:12px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.16);
+  padding:14px 22px; border-radius:100px; margin:0 auto 46px; text-decoration:none; transition:.35s var(--ease);
+}
+.google-badge:hover{background:rgba(255,255,255,.14); transform:translateY(-3px);}
+.google-badge .g-icon{width:22px; height:22px; flex-shrink:0;}
+.google-badge .g-text{display:flex; flex-direction:column; line-height:1.25;}
+.google-badge .g-score{font-family:'Fraunces',serif; font-weight:700; color:#fff; font-size:15px;}
+.google-badge .g-stars{color:var(--gold); font-size:12px; letter-spacing:1px;}
+.google-badge .g-count{font-family:'IBM Plex Mono',monospace; font-size:11px; color:rgba(255,255,255,.6);}
+.google-badge-wrap{text-align:center;}
 .testimonial-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:28px;}
 .testimonial-item{
   background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14); padding:36px; border-radius:var(--radius);
@@ -363,14 +392,33 @@ section{padding:120px 0;}
 
 /* ================= GALLERY ================= */
 .gallery{display:grid; grid-template-columns:repeat(3,1fr); grid-auto-rows:220px; gap:22px;}
-.gallery a{grid-column:span 1; grid-row:span 1; border-radius:22px; overflow:hidden; position:relative; display:block;}
-.gallery a:nth-child(1){grid-column:span 2; grid-row:span 2;}
+.gallery button.gallery-item{grid-column:span 1; grid-row:span 1; border-radius:22px; overflow:hidden; position:relative; display:block; border:none; padding:0; cursor:pointer; background:none; width:100%; height:100%;}
+.gallery button.gallery-item:nth-child(1){grid-column:span 2; grid-row:span 2;}
 .gallery img{width:100%; height:100%; object-fit:cover; transition:transform .6s var(--ease);}
-.gallery a::after{content:'\f00e'; font-family:'Font Awesome 6 Free'; font-weight:900; position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:#fff; font-size:22px; background:rgba(10,43,42,0); transition:.4s;}
-.gallery a:hover::after{background:rgba(10,43,42,.45);}
-.gallery a:hover img{transform:scale(1.1);}
-@media(max-width:820px){.gallery{grid-template-columns:repeat(2,1fr); grid-auto-rows:180px;} .gallery a:nth-child(1){grid-column:span 2;}}
-@media(max-width:520px){.gallery{grid-template-columns:1fr;} .gallery a:nth-child(1){grid-column:span 1; grid-row:span 1;}}
+.gallery button.gallery-item::after{content:'\f00e'; font-family:'Font Awesome 6 Free'; font-weight:900; position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:#fff; font-size:22px; background:rgba(10,43,42,0); transition:.4s;}
+.gallery button.gallery-item:hover::after{background:rgba(10,43,42,.45);}
+.gallery button.gallery-item:hover img{transform:scale(1.1);}
+@media(max-width:820px){.gallery{grid-template-columns:repeat(2,1fr); grid-auto-rows:180px;} .gallery button.gallery-item:nth-child(1){grid-column:span 2;}}
+@media(max-width:520px){.gallery{grid-template-columns:1fr;} .gallery button.gallery-item:nth-child(1){grid-column:span 1; grid-row:span 1;}}
+
+/* ================= LIGHTBOX ================= */
+.lightbox-overlay{
+  position:fixed; inset:0; background:rgba(7,20,19,.92); z-index:2000; display:none;
+  align-items:center; justify-content:center; padding:40px; backdrop-filter:blur(6px);
+}
+.lightbox-overlay.open{display:flex;}
+.lightbox-overlay figure{margin:0; display:flex; flex-direction:column; align-items:center; max-width:92vw; max-height:92vh;}
+.lightbox-overlay img{
+  display:block; width:auto; height:auto; max-width:92vw; max-height:82vh; object-fit:contain;
+  border-radius:14px; box-shadow:0 30px 80px rgba(0,0,0,.5);
+}
+.lightbox-overlay figcaption{color:rgba(255,255,255,.75); font-size:13.5px; margin-top:14px; text-align:center; font-family:'IBM Plex Mono',monospace; letter-spacing:.03em;}
+.lightbox-close{
+  position:absolute; top:26px; right:30px; width:48px; height:48px; border-radius:50%; border:1.5px solid rgba(255,255,255,.3);
+  background:rgba(255,255,255,.08); color:#fff; font-size:19px; display:flex; align-items:center; justify-content:center;
+  cursor:pointer; transition:.3s var(--ease);
+}
+.lightbox-close:hover{background:var(--coral); border-color:var(--coral); transform:rotate(90deg);}
 
 /* ================= AWARDS ================= */
 .awards-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:28px;}
@@ -412,7 +460,7 @@ section{padding:120px 0;}
 .local-meta{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
 .local-meta-item{background:var(--teal-deep); color:#fff; border-radius:var(--radius); padding:30px;}
 .local-meta-item i{color:var(--coral); font-size:24px; margin-bottom:14px; display:block;}
-.local-meta-item h4{font-family:'Fraunces',serif; font-size:17px; margin-bottom:8px;}
+.local-meta-item h4{font-family:'Fraunces',serif; font-size:17px; margin-bottom:8px; color:#fff;}
 .local-meta-item p{font-size:13.5px; color:rgba(255,255,255,.7);}
 @media(max-width:900px){.areas-grid{grid-template-columns:repeat(2,1fr);} .local-meta{grid-template-columns:1fr;}}
 
@@ -496,7 +544,7 @@ footer{background:var(--teal-deep); color:rgba(255,255,255,.8); padding:80px 0 0
 <nav class="navbar">
 <a href="#home" class="logo-mark">
 <svg viewBox="0 0 48 48" fill="none"><path d="M24 6C15 6 9 12 9 20c0 5 2 8 2 13 0 4 1.5 8 4 8 2.5 0 3-4 3.5-8 .4-3 1.5-5 5.5-5s5.1 2 5.5 5c.5 4 1 8 3.5 8s4-4 4-8c0-5 2-8 2-13 0-8-6-14-15-14Z" stroke="#FF6B4A" stroke-width="2"/></svg>
-<span class="logo-text">Shine Dental<span>Super Speciality Clinic</span></span>
+<span class="logo-text">Shine <span>Superspeciality Dental Clinic · Est. 2011</span></span>
 </a>
 <ul class="nav-links">
 <li><a href="#about-intro">About</a></li>
@@ -528,8 +576,9 @@ footer{background:var(--teal-deep); color:rgba(255,255,255,.8); padding:80px 0 0
 <div class="wrap hero-grid">
 <div class="hero-content">
 <div class="eyebrow reveal in">Hyderabad · Alkapuri &amp; Ibrahimpatnam</div>
+<div class="est-badge reveal in"><i class="fas fa-seedling"></i> Serving Hyderabad smiles since 2011</div>
 <h1 class="reveal in">Elite superspeciality dental care for <em>timeless</em> smiles</h1>
-<p class="hero-ai-intro reveal in">Shine Super Speciality Dental Clinic is a leading multi-speciality dental clinic in Hyderabad, offering dental implants, root canal treatment, cosmetic dentistry, orthodontics, pediatric dentistry, wisdom tooth removal and smile makeovers. Our nine in-house specialists use advanced digital technology to deliver safe, painless, personalized care.</p>
+<p class="hero-ai-intro reveal in">Shine Superspeciality Dental Clinic is a leading multi-speciality dental clinic in Hyderabad, offering dental implants, root canal treatment, cosmetic dentistry, orthodontics, pediatric dentistry, wisdom tooth removal and smile makeovers. Our nine in-house specialists use advanced digital technology to deliver safe, painless, personalized care.</p>
 <p class="hero-sub reveal in">CBCT-guided precision, sterile suites and a concierge patient journey — across two Hyderabad locations.</p>
 <div class="hero-actions reveal in">
 <a href="#contact" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Schedule Consultation</a>
@@ -557,13 +606,13 @@ footer{background:var(--teal-deep); color:rgba(255,255,255,.8); padding:80px 0 0
 <section id="about-intro">
 <div class="wrap intro-grid">
 <div class="intro-media reveal">
-<img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=900&q=80" alt="Interior of Shine Super Speciality Dental Clinic">
+<img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=900&q=80" alt="Interior of Shine Superspeciality Dental Clinic">
 <div class="intro-badge"><i class="fas fa-award"></i><div><b>15+ Years</b><span>Clinical Excellence</span></div></div>
 </div>
 <div class="intro-text reveal">
 <div class="eyebrow">Who We Are</div>
 <h2 style="font-size:clamp(28px,3.4vw,38px); margin-bottom:22px;">Hyderabad's multi-speciality dental authority</h2>
-<p class="lead">Shine Super Speciality Dental Clinic is a leading multi-speciality dental clinic in Hyderabad, delivering dental implants, root canal treatment, cosmetic dentistry, orthodontics, pediatric dentistry, oral surgery and smile makeovers through a team of experienced specialists.</p>
+<p class="lead">Shine Superspeciality Dental Clinic is a leading multi-speciality dental clinic in Hyderabad, delivering dental implants, root canal treatment, cosmetic dentistry, orthodontics, pediatric dentistry, oral surgery and smile makeovers through a team of experienced specialists.</p>
 <p>Every treatment plan starts with digital diagnostics — CBCT scans, intraoral imaging and 3D smile design — so decisions are precise, and outcomes are predictable. Two branches, Alkapuri and Ibrahimpatnam, serve patients across Hyderabad and the surrounding districts.</p>
 <div class="chip-row">
 <span class="chip">BDS &amp; MDS Specialists</span>
@@ -597,7 +646,7 @@ footer{background:var(--teal-deep); color:rgba(255,255,255,.8); padding:80px 0 0
 <div class="why-card reveal" style="--i:1"><i class="fas fa-bolt"></i><h3>Laser Dentistry</h3><p>Faster healing, minimal bleeding and reduced discomfort for gum and soft-tissue procedures.</p></div>
 <div class="why-card reveal" style="--i:2"><i class="fas fa-user-md"></i><h3>Experienced Specialists</h3><p>Nine in-house BDS/MDS specialists, each focused on a distinct field of dentistry.</p></div>
 <div class="why-card reveal" style="--i:3"><i class="fas fa-hand-holding-heart"></i><h3>Painless Dentistry</h3><p>Modern anaesthesia protocols and gentle technique across every treatment chair.</p></div>
-<div class="why-card reveal" style="--i:0"><i class="fas fa-shield-virus"></i><h3>Strict Sterilization</h3><p>Autoclave sterilization and single-use consumables followed for every patient.</p></div>
+<div class="why-card reveal" style="--i:0"><i class="fas fa-shield-virus"></i><h3>5-Step Sterilization Process</h3><p>A rigorous 5-step sterilization process and single-use consumables followed for every patient, every visit.</p></div>
 <div class="why-card reveal" style="--i:1"><i class="fas fa-file-invoice-dollar"></i><h3>Transparent Pricing</h3><p>Written treatment estimates before you begin — no hidden costs, ever.</p></div>
 <div class="why-card reveal" style="--i:2"><i class="fas fa-briefcase-medical"></i><h3>Emergency Dental Care</h3><p>Priority slots for sudden pain, trauma or broken restorations.</p></div>
 <div class="why-card reveal" style="--i:3"><i class="fas fa-map-marker-alt"></i><h3>Two Convenient Branches</h3><p>Alkapuri and Ibrahimpatnam locations, both easy to reach across Hyderabad.</p></div>
@@ -643,6 +692,9 @@ footer{background:var(--teal-deep); color:rgba(255,255,255,.8); padding:80px 0 0
 <div class="condition-chip"><i class="fas fa-circle-dot"></i>Cavities</div>
 <div class="condition-chip"><i class="fas fa-tooth"></i>Broken Teeth</div>
 <div class="condition-chip"><i class="fas fa-sun"></i>Yellow / Stained Teeth</div>
+<div class="condition-chip"><i class="fas fa-face-frown"></i>TMJ Issues</div>
+<div class="condition-chip"><i class="fas fa-bed"></i>Sleep Apnea</div>
+<div class="condition-chip"><i class="fas fa-bone"></i>Trauma / Jaw Fractures</div>
 </div>
 </div>
 </section>
@@ -691,25 +743,56 @@ footer{background:var(--teal-deep); color:rgba(255,255,255,.8); padding:80px 0 0
 <h2>Meet the clinical team</h2>
 <p>Nine in-house specialists, each dedicated to a distinct field of dentistry.</p>
 </div>
+<p class="ba-note reveal" style="margin-top:-40px;">Placeholder photos shown for layout — replace each with the doctor's real photo when ready.</p>
 <div class="team-grid stagger">
 
-<div class="doc-card reveal" style="--i:0"><div class="doc-photo"><span class="initials">CK</span></div><div class="doc-info"><h3>Dr. Chandan Kumar</h3><div class="role">Oral Maxillofacial Pathologist &amp; Implantologist</div><div class="doc-meta"><span>BDS, MDS</span><span>15 yrs experience</span></div><p>Leads complex implant planning and oral pathology diagnosis across both branches.</p></div></div>
+<div class="doc-card reveal" style="--i:0">
+<div class="doc-photo"><img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=500&h=500&q=80" alt="Dr. Chandan Kumar" onerror="this.style.display='none'"><span class="initials">CK</span></div>
+<div class="doc-info">
+<h3>Dr. Chandan Kumar</h3><div class="role">Oral Maxillofacial Pathologist &amp; Implantologist</div>
+<div class="doc-meta"><span>BDS, MDS</span><span>15 yrs experience</span></div>
+<p>Leads complex implant planning and oral pathology diagnosis across both branches. Has performed 9,000+ painless root canal treatments.</p>
+<div class="doc-bio-full" id="bio-chandan">
+<p>Dr. Chandan Kumar is a highly experienced dental professional with over 15 years of expertise in comprehensive dental care, specializing in painless Root Canal Treatment (RCT). Over the course of his career, he has successfully performed more than <strong>9,000 root canal treatments</strong>, helping patients preserve their natural teeth with precision, comfort, and long-term success.</p>
+<p>Known for his patient-centric approach and clinical excellence, Dr. Chandan is committed to delivering high-quality dental care using advanced techniques and modern technology. His areas of expertise include endodontics, restorative dentistry, cosmetic dentistry, smile rehabilitation, aligners and preventive dental care.</p>
+<p>Apart from his clinical achievements, Dr. Chandan has held leadership positions in leading dental organizations and has extensive experience in managing and scaling multi-location dental clinic networks. He has been associated with reputed corporate healthcare groups and has played a key role in clinic operations, quality management, patient experience enhancement, team development, and business growth.</p>
+<p>His philosophy is simple: <strong>provide ethical, evidence-based, and comfortable dental care while helping every patient achieve a healthy and confident smile.</strong></p>
+</div>
+<button class="bio-toggle" onclick="toggleBio(this,'bio-chandan')">Read full bio <i class="fas fa-chevron-down"></i></button>
+</div>
+</div>
 
-<div class="doc-card reveal" style="--i:1"><div class="doc-photo"><span class="initials">AD</span></div><div class="doc-info"><h3>Dr. Annapoorna Devi</h3><div class="role">Cosmetic Dentist</div><div class="doc-meta"><span>BDS, MBA-HM</span><span>14 yrs experience</span></div><p>Specialises in smile design, veneers and aesthetic makeovers with a patient-first approach.</p></div></div>
+<div class="doc-card reveal" style="--i:1">
+<div class="doc-photo"><img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=500&h=500&q=80" alt="Dr. Annapoorna Devi" onerror="this.style.display='none'"><span class="initials">AD</span></div>
+<div class="doc-info">
+<h3>Dr. Annapoorna Devi</h3><div class="role">Cosmetic Dentist</div>
+<div class="doc-meta"><span>BDS, MBA-HM</span><span>14 yrs experience</span></div>
+<p>Specialises in smile design, veneers and aesthetic makeovers with a patient-first approach.</p>
+<div class="doc-bio-full" id="bio-annapoorna">
+<p>Dr. Annapoorna is a highly experienced dental professional with over <strong>14 years of clinical expertise</strong> in comprehensive dental care. She is renowned for her accurate diagnosis, patient-centric treatment approach, and commitment to delivering exceptional clinical outcomes.</p>
+<p>She specializes in <strong>Cosmetic Dentistry, Smile Designing, Teeth Whitening,</strong> and <strong>Aesthetic Dental Corrections</strong>, helping patients achieve healthy, confident, and beautiful smiles through customized treatment plans.</p>
+<p>In addition to her clinical expertise, Dr. Annapoorna holds a <strong>Postgraduate qualification in MBA (Hospital Management)</strong>, which enhances her understanding of healthcare quality, patient experience, and service excellence. Her unique combination of dental proficiency and healthcare management knowledge enables her to focus not only on treatment outcomes but also on ensuring a seamless and satisfying patient journey.</p>
+</div>
+<button class="bio-toggle" onclick="toggleBio(this,'bio-annapoorna')">Read full bio <i class="fas fa-chevron-down"></i></button>
+</div>
+</div>
 
-<div class="doc-card reveal" style="--i:2"><div class="doc-photo"><span class="initials">M</span></div><div class="doc-info"><h3>Dr. Mourya</h3><div class="role">Cosmetic Dentist</div><div class="doc-meta"><span>BDS</span><span>5 yrs experience</span></div><p>Focuses on whitening, bonding and cosmetic restorations for everyday smile care.</p></div></div>
+<div class="doc-card reveal" style="--i:2">
+<div class="doc-photo"><img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=500&h=500&q=80" alt="Dr. Mourya" onerror="this.style.display='none'"><span class="initials">M</span></div>
+<div class="doc-info"><h3>Dr. Mourya</h3><div class="role">Cosmetic Dentist</div><div class="doc-meta"><span>BDS</span><span>5 yrs experience</span></div><p>Focuses on whitening, bonding and cosmetic restorations for everyday smile care.</p></div>
+</div>
 
-<div class="doc-card reveal" style="--i:0"><div class="doc-photo"><span class="initials">S</span></div><div class="doc-info"><h3>Dr. Sadiq</h3><div class="role">Prosthodontist &amp; Implantologist</div><div class="doc-meta"><span>BDS, MDS</span><span>7 yrs experience</span></div><p>Handles crowns, bridges, dentures and full-mouth implant rehabilitation.</p></div></div>
+<div class="doc-card reveal" style="--i:0"><div class="doc-photo"><img src="https://images.unsplash.com/photo-1712215544003-af10130f8eb3?auto=format&fit=crop&w=500&h=500&q=80" alt="Dr. Sadiq" onerror="this.style.display='none'"><span class="initials">S</span></div><div class="doc-info"><h3>Dr. Sadiq</h3><div class="role">Prosthodontist &amp; Implantologist</div><div class="doc-meta"><span>BDS, MDS</span><span>7 yrs experience</span></div><p>Handles crowns, bridges, dentures and full-mouth implant rehabilitation.</p></div></div>
 
-<div class="doc-card reveal" style="--i:1"><div class="doc-photo"><span class="initials">R</span></div><div class="doc-info"><h3>Dr. Rajesh</h3><div class="role">Oral &amp; Maxillofacial Surgeon</div><div class="doc-meta"><span>BDS, MDS</span><span>7 yrs experience</span></div><p>Performs wisdom tooth extractions and minimally invasive oral surgery.</p></div></div>
+<div class="doc-card reveal" style="--i:1"><div class="doc-photo"><img src="https://images.unsplash.com/photo-1637059824899-a441006a6875?auto=format&fit=crop&w=500&h=500&q=80" alt="Dr. Rajesh" onerror="this.style.display='none'"><span class="initials">R</span></div><div class="doc-info"><h3>Dr. Rajesh</h3><div class="role">Oral &amp; Maxillofacial Surgeon</div><div class="doc-meta"><span>BDS, MDS</span><span>7 yrs experience</span></div><p>Performs wisdom tooth extractions and minimally invasive oral surgery.</p></div></div>
 
-<div class="doc-card reveal" style="--i:2"><div class="doc-photo"><span class="initials">S</span></div><div class="doc-info"><h3>Dr. Shruthi</h3><div class="role">Pedodontist</div><div class="doc-meta"><span>BDS, MDS</span><span>4 yrs experience</span></div><p>Dedicated to gentle, child-friendly dentistry and preventive care for young patients.</p></div></div>
+<div class="doc-card reveal" style="--i:2"><div class="doc-photo"><img src="https://images.unsplash.com/photo-1673865641073-4479f93a7776?auto=format&fit=crop&w=500&h=500&q=80" alt="Dr. Shruthi" onerror="this.style.display='none'"><span class="initials">S</span></div><div class="doc-info"><h3>Dr. Shruthi</h3><div class="role">Pedodontist</div><div class="doc-meta"><span>BDS, MDS</span><span>4 yrs experience</span></div><p>Dedicated to gentle, child-friendly dentistry and preventive care for young patients.</p></div></div>
 
-<div class="doc-card reveal" style="--i:0"><div class="doc-photo"><span class="initials">H</span></div><div class="doc-info"><h3>Dr. Hemanth</h3><div class="role">Periodontist</div><div class="doc-meta"><span>BDS, MDS</span><span>9 yrs experience</span></div><p>Manages gum health, periodontal therapy and laser-assisted soft-tissue treatment.</p></div></div>
+<div class="doc-card reveal" style="--i:0"><div class="doc-photo"><img src="https://images.unsplash.com/photo-1645066928295-2506defde470?auto=format&fit=crop&w=500&h=500&q=80" alt="Dr. Hemanth" onerror="this.style.display='none'"><span class="initials">H</span></div><div class="doc-info"><h3>Dr. Hemanth</h3><div class="role">Periodontist</div><div class="doc-meta"><span>BDS, MDS</span><span>9 yrs experience</span></div><p>Manages gum health, periodontal therapy and laser-assisted soft-tissue treatment.</p></div></div>
 
-<div class="doc-card reveal" style="--i:1"><div class="doc-photo"><span class="initials">R</span></div><div class="doc-info"><h3>Dr. Ravi</h3><div class="role">Orthodontist</div><div class="doc-meta"><span>BDS, MDS</span><span>6 yrs experience</span></div><p>Plans clear aligner and ceramic brace treatment for all ages.</p></div></div>
+<div class="doc-card reveal" style="--i:1"><div class="doc-photo"><img src="https://images.unsplash.com/photo-1612349316228-5942a9b489c2?auto=format&fit=crop&w=500&h=500&q=80" alt="Dr. Ravi" onerror="this.style.display='none'"><span class="initials">R</span></div><div class="doc-info"><h3>Dr. Ravi</h3><div class="role">Orthodontist</div><div class="doc-meta"><span>BDS, MDS</span><span>6 yrs experience</span></div><p>Plans clear aligner and ceramic brace treatment for all ages.</p></div></div>
 
-<div class="doc-card reveal" style="--i:2"><div class="doc-photo"><span class="initials">S</span></div><div class="doc-info"><h3>Dr. Siddarth</h3><div class="role">Orthodontist</div><div class="doc-meta"><span>BDS, MDS</span><span>4 yrs experience</span></div><p>Supports orthodontic care with a focus on discreet, effective correction.</p></div></div>
+<div class="doc-card reveal" style="--i:2"><div class="doc-photo"><img src="https://images.unsplash.com/photo-1622902046580-2b47f47f5471?auto=format&fit=crop&w=500&h=500&q=80" alt="Dr. Siddarth" onerror="this.style.display='none'"><span class="initials">S</span></div><div class="doc-info"><h3>Dr. Siddarth</h3><div class="role">Orthodontist</div><div class="doc-meta"><span>BDS, MDS</span><span>4 yrs experience</span></div><p>Supports orthodontic care with a focus on discreet, effective correction.</p></div></div>
 
 </div>
 </div>
@@ -762,6 +845,12 @@ footer{background:var(--teal-deep); color:rgba(255,255,255,.8); padding:80px 0 0
 <div class="eyebrow">Patient Voices</div>
 <h2>Client experiences</h2>
 </div>
+<div class="google-badge-wrap reveal">
+<a class="google-badge" href="https://www.google.com/maps?q=Shine+Superspeciality+Dental+Clinic,+LB+Nagar,+Hyderabad" target="_blank" rel="noopener">
+<svg class="g-icon" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12s5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24s8.955,20,20,20s20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/><path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/><path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/><path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"/></svg>
+<span class="g-text"><span class="g-score">4.9 out of 5 <span class="g-stars">★★★★★</span></span><span class="g-count">Based on 500+ Google reviews · Read reviews</span></span>
+</a>
+</div>
 <div class="testimonial-grid stagger">
 <div class="testimonial-item reveal" style="--i:0"><div class="stars">★★★★★</div><p>"Transformative experience — the care and results exceeded all expectations."</p><cite><span class="av">S</span>Sophia L.</cite></div>
 <div class="testimonial-item reveal" style="--i:1"><div class="stars">★★★★★</div><p>"A calm, professional clinic with top-notch specialists. My new smile is priceless."</p><cite><span class="av">D</span>David M.</cite></div>
@@ -777,11 +866,19 @@ footer{background:var(--teal-deep); color:rgba(255,255,255,.8); padding:80px 0 0
 <h2>Our clinic</h2>
 </div>
 <div class="gallery reveal">
-<a href="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1000&q=80"><img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80" alt="Clinic interior"></a>
-<a href="https://images.unsplash.com/photo-1629909613654-28e8ab3bb1c4?auto=format&fit=crop&w=800&q=80"><img src="https://images.unsplash.com/photo-1629909613654-28e8ab3bb1c4?auto=format&fit=crop&w=800&q=80" alt="Treatment room"></a>
-<a href="https://images.unsplash.com/photo-1537368910025-700c7d4a7c0e?auto=format&fit=crop&w=800&q=80"><img src="https://images.unsplash.com/photo-1537368910025-700c7d4a7c0e?auto=format&fit=crop&w=800&q=80" alt="Patient lounge"></a>
-<a href="https://images.unsplash.com/photo-1606813904477-603150e35b85?auto=format&fit=crop&w=800&q=80"><img src="https://images.unsplash.com/photo-1606813904477-603150e35b85?auto=format&fit=crop&w=800&q=80" alt="Team collaboration"></a>
-<a href="https://images.unsplash.com/photo-1612349317150-e413f6a5b16c?auto=format&fit=crop&w=800&q=80"><img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16c?auto=format&fit=crop&w=800&q=80" alt="Consultation"></a>
+<button type="button" class="gallery-item" data-full="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1600&q=90" data-caption="Clinic interior"><img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80" alt="Clinic interior"></button>
+<button type="button" class="gallery-item" data-full="https://images.unsplash.com/photo-1629909613654-28e8ab3bb1c4?auto=format&fit=crop&w=1600&q=90" data-caption="Treatment room"><img src="https://images.unsplash.com/photo-1629909613654-28e8ab3bb1c4?auto=format&fit=crop&w=800&q=80" alt="Treatment room"></button>
+<button type="button" class="gallery-item" data-full="https://images.unsplash.com/photo-1537368910025-700c7d4a7c0e?auto=format&fit=crop&w=1600&q=90" data-caption="Patient lounge"><img src="https://images.unsplash.com/photo-1537368910025-700c7d4a7c0e?auto=format&fit=crop&w=800&q=80" alt="Patient lounge"></button>
+<button type="button" class="gallery-item" data-full="https://images.unsplash.com/photo-1606813904477-603150e35b85?auto=format&fit=crop&w=1600&q=90" data-caption="Team collaboration"><img src="https://images.unsplash.com/photo-1606813904477-603150e35b85?auto=format&fit=crop&w=800&q=80" alt="Team collaboration"></button>
+<button type="button" class="gallery-item" data-full="https://images.unsplash.com/photo-1612349317150-e413f6a5b16c?auto=format&fit=crop&w=1600&q=90" data-caption="Consultation"><img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16c?auto=format&fit=crop&w=800&q=80" alt="Consultation"></button>
+</div>
+
+<div class="lightbox-overlay" id="lightbox">
+<button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close"><i class="fas fa-xmark"></i></button>
+<figure>
+<img id="lightboxImg" src="" alt="">
+<figcaption id="lightboxCaption"></figcaption>
+</figure>
 </div>
 </div>
 </section>
@@ -838,24 +935,21 @@ footer{background:var(--teal-deep); color:rgba(255,255,255,.8); padding:80px 0 0
 <section id="local-seo" class="bg-mint">
 <div class="wrap">
 <div class="section-head reveal">
-<div class="eyebrow">Local SEO</div>
 <h2>Areas we serve across Hyderabad</h2>
 <p>Convenient for patients across the city — not just Alkapuri and Ibrahimpatnam.</p>
 </div>
 <div class="areas-grid stagger">
-<div class="area-item reveal" style="--i:0"><i class="fas fa-location-dot"></i>Jubilee Hills</div>
-<div class="area-item reveal" style="--i:1"><i class="fas fa-location-dot"></i>Banjara Hills</div>
-<div class="area-item reveal" style="--i:2"><i class="fas fa-location-dot"></i>Gachibowli</div>
-<div class="area-item reveal" style="--i:0"><i class="fas fa-location-dot"></i>Kondapur</div>
-<div class="area-item reveal" style="--i:1"><i class="fas fa-location-dot"></i>Madhapur</div>
-<div class="area-item reveal" style="--i:2"><i class="fas fa-location-dot"></i>Kukatpally</div>
-<div class="area-item reveal" style="--i:0"><i class="fas fa-location-dot"></i>Mehdipatnam</div>
-<div class="area-item reveal" style="--i:1"><i class="fas fa-location-dot"></i>HITEC City</div>
+<div class="area-item reveal" style="--i:0"><i class="fas fa-location-dot"></i>LB Nagar</div>
+<div class="area-item reveal" style="--i:1"><i class="fas fa-location-dot"></i>Nagole</div>
+<div class="area-item reveal" style="--i:2"><i class="fas fa-location-dot"></i>Rocktown Colony</div>
+<div class="area-item reveal" style="--i:0"><i class="fas fa-location-dot"></i>Vanasthalipuram</div>
+<div class="area-item reveal" style="--i:1"><i class="fas fa-location-dot"></i>Hubsiguda</div>
+<div class="area-item reveal" style="--i:2"><i class="fas fa-location-dot"></i>Saroornagar</div>
 </div>
 <div class="local-meta stagger">
 <div class="local-meta-item reveal" style="--i:0"><i class="fas fa-signs-post"></i><h4>Nearby Landmarks</h4><p>Alkapuri branch is close to Nagole; Ibrahimpatnam branch sits opposite the main bus stand for easy access.</p></div>
 <div class="local-meta-item reveal" style="--i:1"><i class="fas fa-square-parking"></i><h4>Parking &amp; Transport</h4><p>On-site parking available at both branches, with easy access from local bus routes.</p></div>
-<div class="local-meta-item reveal" style="--i:2"><i class="fas fa-clock"></i><h4>Clinic Timings</h4><p>Mon–Sat: 9:00 AM–1:00 PM &amp; 4:00 PM–9:00 PM<br>Sunday: By appointment only</p></div>
+<div class="local-meta-item reveal" style="--i:2"><i class="fas fa-clock"></i><h4>Clinic Timings</h4><p>Open all 7 days<br>10:00 AM – 9:00 PM</p></div>
 </div>
 </div>
 </section>
@@ -919,8 +1013,7 @@ footer{background:var(--teal-deep); color:rgba(255,255,255,.8); padding:80px 0 0
 <button type="submit"><i class="fab fa-whatsapp"></i> Send to WhatsApp</button>
 <div class="clinic-timings-contact">
 <strong>Clinic Timings:</strong><br>
-Mon – Sat: 9:00 AM – 1:00 PM &amp; 4:00 PM – 9:00 PM<br>
-Sunday: By Appointment Only
+Open all 7 days: 10:00 AM – 9:00 PM
 </div>
 </form>
 <div class="map-container reveal">
@@ -950,8 +1043,8 @@ Sunday: By Appointment Only
 <svg viewBox="0 0 48 48" fill="none" style="width:34px;height:34px;"><path d="M24 6C15 6 9 12 9 20c0 5 2 8 2 13 0 4 1.5 8 4 8 2.5 0 3-4 3.5-8 .4-3 1.5-5 5.5-5s5.1 2 5.5 5c.5 4 1 8 3.5 8s4-4 4-8c0-5 2-8 2-13 0-8-6-14-15-14Z" stroke="#FF6B4A" stroke-width="2"/></svg>
 <span class="logo-text">Shine Dental</span>
 </a>
-<p>Delivering elite, multi-speciality dental care with advanced digital technology across Hyderabad.</p>
-<p><strong style="color:#fff;">Clinic Timings:</strong><br>Mon–Sat: 9AM–1PM &amp; 4PM–9PM<br>Sunday: By appointment</p>
+<p>Delivering elite, multi-speciality dental care with advanced digital technology across Hyderabad. Serving Hyderabad since 2011.</p>
+<p><strong style="color:#fff;">Clinic Timings:</strong><br>Open all 7 days: 10:00 AM – 9:00 PM</p>
 </div>
 <div>
 <h3>Treatments</h3>
@@ -991,7 +1084,7 @@ Sunday: By Appointment Only
 <a href="#"><i class="fab fa-youtube"></i></a>
 </div>
 <div class="footer-bottom">
-<p>&copy; 2026 Shine Super Speciality Dental Clinic. All Rights Reserved.</p>
+<p>&copy; 2026 Shine Superspeciality Dental Clinic. All Rights Reserved.</p>
 <p><a href="#" style="color:rgba(255,255,255,.5);">Privacy Policy</a> &nbsp;·&nbsp; <a href="#" style="color:rgba(255,255,255,.5);">Terms &amp; Conditions</a> &nbsp;·&nbsp; <a href="#" style="color:rgba(255,255,255,.5);">Sitemap</a></p>
 </div>
 </footer>
@@ -1005,6 +1098,14 @@ Sunday: By Appointment Only
 function toggleMenu(){
   document.querySelector('.nav-links').classList.toggle('active');
   document.querySelector('.hamburger').classList.toggle('active');
+}
+function toggleBio(btn, id){
+  const el = document.getElementById(id);
+  el.classList.toggle('open');
+  btn.classList.toggle('open');
+  btn.innerHTML = el.classList.contains('open')
+    ? 'Show less <i class="fas fa-chevron-down"></i>'
+    : 'Read full bio <i class="fas fa-chevron-down"></i>';
 }
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e){
@@ -1065,6 +1166,32 @@ const counterIO = new IntersectionObserver((entries) => {
 }, {threshold:.5});
 counters.forEach(c => counterIO.observe(c));
 
+/* Gallery lightbox — image sizes itself to its own width/height, with a close button */
+(function(){
+  const overlay = document.getElementById('lightbox');
+  const imgEl = document.getElementById('lightboxImg');
+  const capEl = document.getElementById('lightboxCaption');
+  const closeBtn = document.getElementById('lightboxClose');
+  function openLightbox(src, caption){
+    imgEl.src = src;
+    imgEl.alt = caption || '';
+    capEl.textContent = caption || '';
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox(){
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+    imgEl.src = '';
+  }
+  document.querySelectorAll('.gallery-item').forEach(btn => {
+    btn.addEventListener('click', () => openLightbox(btn.dataset.full, btn.dataset.caption));
+  });
+  closeBtn.addEventListener('click', closeLightbox);
+  overlay.addEventListener('click', (e) => { if(e.target === overlay) closeLightbox(); });
+  window.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeLightbox(); });
+})();
+
 /* Before / After sliders */
 document.querySelectorAll('[data-ba]').forEach(slider => {
   const after = slider.querySelector('.after-img');
@@ -1088,12 +1215,13 @@ document.querySelectorAll('[data-ba]').forEach(slider => {
 {
   "@context": "https://schema.org",
   "@type": "Dentist",
-  "name": "Shine Super Speciality Dental Clinic",
+  "name": "Shine Superspeciality Dental Clinic",
   "image": "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5",
   "url": "https://shinedental-clinics.com/",
   "telephone": "+91-9908655335",
   "email": "shinedental2011@gmail.com",
   "priceRange": "$$",
+  "foundingDate": "2011",
   "address": [
     {
       "@type": "PostalAddress",
@@ -1112,11 +1240,11 @@ document.querySelectorAll('[data-ba]').forEach(slider => {
       "addressCountry": "IN"
     }
   ],
-  "areaServed": ["Hyderabad","Jubilee Hills","Banjara Hills","Gachibowli","Kondapur","Madhapur","Kukatpally","Mehdipatnam","HITEC City","Ibrahimpatnam"],
+  "areaServed": ["Hyderabad","LB Nagar","Nagole","Rocktown Colony","Vanasthalipuram","Hubsiguda","Saroornagar","Ibrahimpatnam"],
   "openingHoursSpecification": [
-    {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"09:00","closes":"13:00"},
-    {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"16:00","closes":"21:00"}
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"10:00","closes":"21:00"}
   ],
+  "aggregateRating": {"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"500"},
   "medicalSpecialty": ["Dental Implants","Root Canal Therapy","Cosmetic Dentistry","Orthodontics","Oral Surgery","Pediatric Dentistry"],
   "employee": [
     {"@type":"Person","name":"Dr. Chandan Kumar","jobTitle":"Oral Maxillofacial Pathologist & Implantologist","hasCredential":"BDS, MDS"},
@@ -1159,7 +1287,7 @@ document.querySelectorAll('[data-ba]').forEach(slider => {
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "Shine Super Speciality Dental Clinic",
+  "name": "Shine Superspeciality Dental Clinic",
   "url": "https://shinedental-clinics.com/"
 }
 </script>
