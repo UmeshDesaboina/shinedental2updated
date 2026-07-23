@@ -481,11 +481,18 @@ section{padding:120px 0;}
 form{display:flex; flex-direction:column; background:#fff; padding:44px; border-radius:var(--radius); box-shadow:var(--shadow-md);}
 form h3{font-size:22px; margin-bottom:22px;}
 .field-row{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
-input,textarea{
+input,textarea,select{
   width:100%; padding:16px 18px; margin-bottom:18px; border-radius:14px; border:1.5px solid var(--line);
   font-size:15px; font-family:inherit; transition:border .3s, box-shadow .3s; background:var(--porcelain-2);
 }
-input:focus, textarea:focus{border-color:var(--teal); outline:none; box-shadow:0 0 0 4px rgba(12,110,104,.12); background:#fff;}
+select{
+  appearance:none; -webkit-appearance:none; -moz-appearance:none; color:var(--ink);
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234D5C63' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");
+  background-repeat:no-repeat; background-position:right 16px center; background-size:16px; padding-right:44px;
+  cursor:pointer;
+}
+select:invalid{color:var(--ink-soft);}
+input:focus, textarea:focus, select:focus{border-color:var(--teal); outline:none; box-shadow:0 0 0 4px rgba(12,110,104,.12); background:#fff;}
 form button{
   width:100%; padding:18px; border:none; border-radius:100px; background:var(--coral); color:#fff; font-weight:700;
   font-size:15.5px; cursor:pointer; transition:.4s var(--ease); display:flex; align-items:center; justify-content:center; gap:10px;
@@ -1039,6 +1046,12 @@ footer .footer-logo-group .est-line{
 <input id="email" type="email" placeholder="Your Email" required>
 <input id="phone" placeholder="Phone Number" required>
 </div>
+<select id="branch" required>
+<option value="" disabled selected>Preferred Branch</option>
+<option value="Alkapuri">Alkapuri Branch</option>
+<option value="Ibrahimpatnam">Ibrahimpatnam Branch</option>
+<option value="Not Sure">Not Sure / Either</option>
+</select>
 <input id="date" type="date" placeholder="Preferred Date">
 <textarea id="message" placeholder="Your Message" rows="5"></textarea>
 <button type="submit"><i class="fab fa-whatsapp"></i> Send to WhatsApp</button>
@@ -1107,6 +1120,7 @@ Open all 7 days: 10:00 AM – 9:00 PM
 <h3>Contact</h3>
 <ul>
 <li><a href="tel:+919908655335"><i class="fas fa-phone"></i>&nbsp; +91 99086 55335</a></li>
+<li><a href="tel:+919000245864"><i class="fas fa-phone"></i>&nbsp; +91 90002 45864</a></li>
 <li><a href="mailto:shinedental2011@gmail.com"><i class="fas fa-envelope"></i>&nbsp; shinedental2011@gmail.com</a></li>
 <li><a href="#contact"><i class="fas fa-map-marker-alt"></i>&nbsp; Alkapuri &amp; Ibrahimpatnam, Hyderabad</a></li>
 </ul>
@@ -1160,9 +1174,10 @@ document.getElementById('contactForm').addEventListener('submit', function(e){
   const name = document.getElementById('name').value;
   const email = document.getElementById('email').value;
   const phone = document.getElementById('phone').value;
+  const branch = document.getElementById('branch').value;
   const date = document.getElementById('date').value;
   const message = document.getElementById('message').value;
-  const text = `Name: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(email)}%0APhone: ${encodeURIComponent(phone)}%0APreferred Date: ${encodeURIComponent(date)}%0AMessage: ${encodeURIComponent(message)}`;
+  const text = `Name: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(email)}%0APhone: ${encodeURIComponent(phone)}%0ABranch: ${encodeURIComponent(branch)}%0APreferred Date: ${encodeURIComponent(date)}%0AMessage: ${encodeURIComponent(message)}`;
   window.open(`https://wa.me/919908655335?text=${text}`);
 });
 window.addEventListener('scroll', () => {
