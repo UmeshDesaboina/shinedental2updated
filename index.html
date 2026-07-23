@@ -541,9 +541,18 @@ footer{background:var(--teal-deep); color:rgba(255,255,255,.8); padding:80px 0 0
 .logo-group{display:flex; align-items:center; gap:14px;}
 .logo-group img.brand-logo{height:90px; width:auto; object-fit:contain; border-radius:8px; flex-shrink:0;}
 .logo-group img.brand-badge{height:44px; width:44px; object-fit:cover; border-radius:10px; flex-shrink:0;}
+.logo-group .logo-text-block{display:flex; flex-direction:column; line-height:1.2;}
+.logo-group .est-line{
+  font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--coral); font-weight:600; margin-top:4px;
+}
 footer .footer-logo-group{display:flex; align-items:center; gap:14px; margin-bottom:18px;}
 footer .footer-logo-group img.brand-logo{height:60px; width:auto; object-fit:contain; border-radius:8px;}
 footer .footer-logo-group img.brand-badge{height:46px; width:46px; object-fit:cover; border-radius:10px;}
+footer .footer-logo-group .est-line{
+  font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--coral); font-weight:600; margin-top:4px;
+}
 @media(max-width:480px){
   .logo-group img.brand-logo{height:34px;}
   .logo-group img.brand-badge{height:34px; width:34px;}
@@ -556,14 +565,11 @@ footer .footer-logo-group img.brand-badge{height:46px; width:46px; object-fit:co
 <nav class="navbar">
 <a href="#home" class="logo-mark">
 <div class="logo-group">
-<img class="brand-logo" src="shinelogo.jpeg" alt="Shine Dental logo"><br></br><br>
-     <span class="logo-text">Est. 2011</span>
-<!-- <img class="brand-badge" src="shinelogo2.png" alt="Shine Family Dental badge"> -->
-<a href="#home" class="logo-mark">
-<!-- <svg viewBox="0 0 48 48" fill="none"><path d="M24 6C15 6 9 12 9 20c0 5 2 8 2 13 0 4 1.5 8 4 8 2.5 0 3-4 3.5-8 .4-3 1.5-5 5.5-5s5.1 2 5.5 5c.5 4 1 8 3.5 8s4-4 4-8c0-5 2-8 2-13 0-8-6-14-15-14Z" stroke="#FF6B4A" stroke-width="2"/></svg> -->
-<!-- <span class="logo-text">Shine Superspeciality <span class="logo-text">Dental Clinic · Est. 2011</span></span> -->
-   <span class="logo-text">Shine Superspeciality <br>Dental Clinic · Est. 2011</span>
-</a>
+<img class="brand-logo" src="shinelogo.jpeg" alt="Shine Dental logo">
+<div class="logo-text-block">
+<span class="logo-text">Shine Superspeciality <br>Dental Clinic</span>
+<span class="est-line">EST. 2011</span>
+</div>
 </div>
 </a>
 <ul class="nav-links">
@@ -896,10 +902,6 @@ footer .footer-logo-group img.brand-badge{height:46px; width:46px; object-fit:co
 <button type="button" class="gallery-item" data-full="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1600&q=90" data-caption="Clinic interior"><img src="outdoor.jpeg" alt="Clinic interior"></button>
 <button type="button" class="gallery-item" data-full="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1600&q=90" data-caption="Clinic interior"><img src="outdoor.jpeg" alt="Clinic interior"></button>
 <button type="button" class="gallery-item" data-full="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1600&q=90" data-caption="Clinic interior"><img src="outdoor.jpeg" alt="Clinic interior"></button>
-<!-- <button type="button" class="gallery-item" data-full="https://images.unsplash.com/photo-1629909613654-28e8ab3bb1c4?auto=format&fit=crop&w=1600&q=90" data-caption="Treatment room"><img src="https://images.unsplash.com/photo-1629909613654-28e8ab3bb1c4?auto=format&fit=crop&w=800&q=80" alt="Treatment room"></button>
-<button type="button" class="gallery-item" data-full="https://images.unsplash.com/photo-1537368910025-700c7d4a7c0e?auto=format&fit=crop&w=1600&q=90" data-caption="Patient lounge"><img src="https://images.unsplash.com/photo-1537368910025-700c7d4a7c0e?auto=format&fit=crop&w=800&q=80" alt="Patient lounge"></button>
-<button type="button" class="gallery-item" data-full="https://images.unsplash.com/photo-1606813904477-603150e35b85?auto=format&fit=crop&w=1600&q=90" data-caption="Team collaboration"><img src="https://images.unsplash.com/photo-1606813904477-603150e35b85?auto=format&fit=crop&w=800&q=80" alt="Team collaboration"></button>
-<button type="button" class="gallery-item" data-full="https://images.unsplash.com/photo-1612349317150-e413f6a5b16c?auto=format&fit=crop&w=1600&q=90" data-caption="Consultation"><img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16c?auto=format&fit=crop&w=800&q=80" alt="Consultation"></button> -->
 </div>
 
 <div class="lightbox-overlay" id="lightbox">
@@ -1071,8 +1073,9 @@ Open all 7 days: 10:00 AM – 9:00 PM
 <a href="#home" class="logo-mark" style="margin-bottom:16px;display:inline-flex;">
 <div class="footer-logo-group">
 <img class="brand-logo" src="shinelogo.jpeg" alt="Shine Dental logo">
-    
-<!-- <img class="brand-badge" src="shinelogo2.png" alt="Shine Family Dental badge"> -->
+<div class="logo-text-block">
+<span class="est-line">EST. 2011</span>
+</div>
 </div>
 </a>
 <p>Delivering elite, multi-speciality dental care with advanced digital technology across Hyderabad. Serving Hyderabad since 2011.</p>
